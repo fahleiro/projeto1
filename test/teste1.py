@@ -1,9 +1,5 @@
-#test1.ipynb
 #Cenário de teste 1
-
-#Resultado esperado:
-#deve retornar sucesso;
-#será criado um acesso novo e realizado login no mesmo;
+#Será criado um acesso novo e realizado login no mesmo
 
 
 #(1)importação do driver a partir da bibliotea selenium
@@ -29,37 +25,36 @@ navegador.find_element('xpath','/html/body/div[1]/section/div/form/a').click()
 
 
 #(6)preencher campos obrigatórios, nome
-navegador.find_element('xpath','/html/body/div[1]/section/div/form/div[1]/div/input').send_keys("N6")
-
+navegador.find_element('xpath','/html/body/div[1]/section/div/form/div[1]/div/input').send_keys("N12")
 
 #(6.1)preencher campos obrigatórios, usuário
-navegador.find_element('xpath','/html/body/div[1]/section/div/form/div[2]/div/input').send_keys("U6")
-
+navegador.find_element('xpath','/html/body/div[1]/section/div/form/div[2]/div/input').send_keys("U12")
 
 #(6.2)preencher campos obrigatórios, senha
-navegador.find_element('xpath','/html/body/div[1]/section/div/form/div[3]/div/input').send_keys("S6")
+navegador.find_element('xpath','/html/body/div[1]/section/div/form/div[3]/div/input').send_keys("S12")
 
 
 #(7)clicar para realizar CADASTRO
 navegador.find_element('xpath','/html/body/div[1]/section/div/form/button').click()
 
+#definição de um curto tempo de espera, aguardando carregar a mensagem de cadastro bem sucedido
+time.sleep(1)
 
-#(8)clicar para direcionar p/ LOGIN, LINK DIRETO
-navegador.find_element('xpath','/html/body/div[1]/section/div[2]/form/a').click()
 
-
-#(8.1)clicar para direcionar p/ LOGIN, LINK CADASTRO SUCESSO
-#navegador.find_element('xpath','/html/body/div[1]/section/div[1]/p[2]/a').click()
-
+#(8)clicar para direcionar p/ LOGIN, LINK CADASTRO COM SUCESSO
+navegador.find_element('xpath','/html/body/div[1]/section/div[1]/p[2]/a').click()
 
 
 #(9)preencher campos obrigatórios, usuário
-navegador.find_element('xpath','/html/body/div[1]/section/div/form/div[1]/div/input').send_keys("U6")
-
+navegador.find_element('xpath','/html/body/div[1]/section/div/form/div[1]/div/input').send_keys("U12")
 
 #(9.1)preencher campos obrigatórios, senha
-navegador.find_element('xpath','/html/body/div[1]/section/div/form/div[2]/div/input').send_keys("S6")
-
+navegador.find_element('xpath','/html/body/div[1]/section/div/form/div[2]/div/input').send_keys("S12")
 
 #(9.2)clicar para realizar LOGIN
 navegador.find_element('xpath','/html/body/div[1]/section/div/form/button').click()
+
+
+#(10)no último passo do processo iremos realizar logout da aplicação**
+navegador.find_element('xpath','/html/body/div[1]/h2[2]/a').click()
+
